@@ -4,7 +4,16 @@ Serial MySerial;
 boolean state = false;
 void setup() {
   size(400, 600);
-  MySerial = new Serial(this, "/dev/ttyACM0", 9600);
+ 
+ // Open the port you are using at the rate you want:
+  MySerial = new Serial(this, Serial.list()[0], 9600);
+  
+  
+// List all the available serial ports:
+printArray(Serial.list());
+
+
+
 }
 
 void draw() {
